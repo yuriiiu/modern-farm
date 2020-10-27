@@ -8,10 +8,26 @@ import {createSunflower} from "./seeds/sunflower.js";
 import {createAsparagus} from "./seeds/asparagus.js";
 import {createWheat} from "./seeds/wheat.js";
 import {createPotato} from "./seeds/potato.js";
+import {addPlant} from "./field.js";
+import { usePlants} from "./field.js";
 
 
 
 
+const seeds = [createAsparagus(),createCorn(),createSoybean(),createSunflower(),createWheat(),createPotato()];
+
+addPlant(seeds[0].type);
+var plants = usePlants();
+
+console.log(plants)
+
+addPlant(seeds[2].type);
+plants = usePlants();
+
+console.log(plants)
+
+
+/*
 // Assign function output to variable
 const yearlyPlan = createPlan();
 // Print to console
@@ -36,3 +52,4 @@ console.log(wheatSeed);
 
 const potatoSeed = createPotato();
 console.log(potatoSeed);
+*/
