@@ -2,54 +2,23 @@ console.log("Welcome to the main module")
 
 // Import funcion from another module
 import {createPlan} from "./plan.js";
-import {createCorn} from "./seeds/corn.js";
-import {createSoybean} from "./seeds/soybean.js";
-import {createSunflower} from "./seeds/sunflower.js";
-import {createAsparagus} from "./seeds/asparagus.js";
-import {createWheat} from "./seeds/wheat.js";
-import {createPotato} from "./seeds/potato.js";
+import {plantSeeds} from "./tractor.js";
 import {addPlant} from "./field.js";
 import { usePlants} from "./field.js";
 
 
 
-
-const seeds = [createAsparagus(),createCorn(),createSoybean(),createSunflower(),createWheat(),createPotato()];
-
-addPlant(seeds[0].type);
-var plants = usePlants();
-
-console.log(plants)
-
-addPlant(seeds[2].type);
-plants = usePlants();
-
-console.log(plants)
-
-
-/*
-// Assign function output to variable
+// Create yearly plan
 const yearlyPlan = createPlan();
-// Print to console
-console.log(yearlyPlan);
+console.log(yearlyPlan)
 
+// Plant seeds
+const seeds = plantSeeds(yearlyPlan);
 
-// Test create seed
-const soybeanSeed = createSoybean();
-console.log(soybeanSeed);
+// Add Plant
+addPlant(seeds)
 
-const cornSeed = createCorn();
-console.log(cornSeed);
+// Use Plants
+let plants = usePlants();
 
-const sunflowerSeed = createSunflower();
-console.log(sunflowerSeed);
-
-const asparagusSeed = createAsparagus();
-console.log(asparagusSeed);
-
-const wheatSeed = createWheat();
-console.log(wheatSeed);
-
-const potatoSeed = createPotato();
-console.log(potatoSeed);
-*/
+console.log(plants)
