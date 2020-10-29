@@ -5,6 +5,7 @@ import {createPlan} from "./plan.js";
 import {plantSeeds} from "./tractor.js";
 import {addPlant} from "./field.js";
 import { usePlants} from "./field.js";
+import {harvestPlants} from "./harvester.js"
 
 
 
@@ -22,3 +23,8 @@ addPlant(seeds)
 let plants = usePlants();
 
 console.log(plants)
+
+// Harvest plants
+let seedObj = harvestPlants(plants);
+
+console.log(seedObj)
