@@ -22,3 +22,24 @@ export const harvestPlants = (plants) => {
 
     return seedObj
 }
+
+export const harvest = (plant) => {
+    return `
+        <div class="plant__harvested">${plant.type}</div>
+    `
+}
+
+export const listHarvest = (seedObj) => {
+    const contentElement = document.querySelector(".container")
+    let harvestedHTML = ""
+
+    for (const plant of seedObj) {
+        harvestedHTML += `
+        <section class="plants">
+            ${harvest(plant)}
+        </section>
+        `
+    }
+
+    contentElement.innerHTML += harvestedHTML
+}
